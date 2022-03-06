@@ -10,6 +10,8 @@ import * as ROUTES from "../constants/routes";
 // pages
 import Home from "../features/Home/Home";
 import Login from "../features/Auth/Login/Login";
+import StudentDashboard from "../features/Student/StudentDashboard/StudentDashboard";
+import WardenDashboard from "../features/Warden/WardenDashboard/WardenDashboard";
 
 // Components
 import Loading from "../components/Loading/Loading";
@@ -30,6 +32,12 @@ function App() {
               {/* Auth Routes */}
               {/* <Route path={ROUTES.REGISTER} element={<Register />} /> */}
               <Route path={ROUTES.LOGIN} element={<Login />} />
+
+              {/* Student Routes */}
+              <Route
+                path={ROUTES.STUDENT_DASHBOARD}
+                element={<StudentDashboard />}
+              />
             </Routes>
           </Loading>
         </Router>

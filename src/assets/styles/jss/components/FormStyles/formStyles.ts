@@ -71,8 +71,43 @@ const styles = {
   },
   fontGridColumn: {
     display: "grid",
-    gridTemplateColumns: ["auto", "auto", "auto", "repeat(2, 1fr)"],
-    gap: ["0", "0", "0", "1.5rem"],
+    gridTemplateColumns: [
+      "repeat(2, 1fr)",
+      "repeat(2, 1fr)",
+      "repeat(2, 1fr)",
+      "repeat(2, 1fr)",
+    ],
+    gap: "1.5rem",
+  },
+  background: {
+    minHeight: "100vh",
+    display: "grid",
+    placeItems: "center",
+  },
+  infoGrid: {
+    display: "grid",
+    backgroundColor: "#f8fafc",
+    padding: "1.5rem",
+    borderRadius: "10px",
+    gridTemplateColumns: [
+      "repeat(2, 1fr)",
+      "repeat(2, 1fr)",
+      "repeat(2, 1fr)",
+      "repeat(3, 1fr)",
+    ],
+    gap: "1rem",
+
+    "& > *": {
+      "& > *": {
+        "&:nth-child(1)": {
+          fontSize: "0.85rem",
+          color: "text.secondary",
+        },
+        "&:nth-child(2)": {
+          fontWeight: "500",
+        },
+      },
+    },
   },
 };
 

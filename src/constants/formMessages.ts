@@ -16,3 +16,16 @@ export const PHONE_NUMBER_TOO_SHORT = "Phone number is too short";
 export const PHONE_NUMBER_TOO_LONG = "Phone number is too long";
 export const PHONE_NUMBER_REQUIRED = "Phone number is required";
 export const PHONE_NUMBER_INVALID = "Phone number is invalid";
+
+// outpass form
+export const DATE_REQUIRED = "Date and Time are required";
+export const DATE_INVALID = "Date and Time is invalid";
+export const DATE_TOO_EARLY = "Date and Time is too early";
+export const DATE_TOO_LATE = "Date and Time is too late";
+export const DAYS_REQUIRED = "No of Days are required";
+export const DAYS_INVALID = "No of Days is invalid";
+export const REASON_REQUIRED = "Reason is required";
+export const REASON_MAX_LENGTH = "Reason must be < 50 characters";
+export const TRANSPORT_REQUIRED = "Mode of Transport is required";
+export const PARENT_CONTACT_REQUIRED = "Parent Contact Field is required";
+export const END_CANNOT_BE_BEFORE_START = "End cannot be before start";
