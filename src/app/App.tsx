@@ -16,7 +16,7 @@ import Loading from "../components/Loading/Loading";
 // import DashboardMenu from "../components/Dashboard/DashboardMenu";
 // import PageNotFound from "../components/PageNotFound";
 
-const App = () => {
+function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -36,6 +36,6 @@ const App = () => {
       </ThemeProvider>
     </Provider>
   );
-};
+}
 
 export default App;

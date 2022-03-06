@@ -13,6 +13,5 @@ export const LOGOUT = `${AUTH_ROUTE}/login`;
 export const GET_ME = `${AUTH_ROUTE}/me`;
 export const UPDATE_PASSWORD = `${AUTH_ROUTE}/update-password`;
 export const FORGOT_PASSWORD = `${AUTH_ROUTE}/forgot-password`;
-export const resetPassword = (resetToken = ":resetToken") => {
-  return `${AUTH_ROUTE}/${resetToken}/reset-password`;
-};
+export const resetPassword = (resetToken = ":resetToken") =>
+  `${AUTH_ROUTE}/${resetToken}/reset-password`;
