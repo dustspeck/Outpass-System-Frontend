@@ -11,7 +11,7 @@ const Loading: React.FC<ILoadingProps> = ({ children }) => {
   return (
     <>
       <Backdrop sx={styles.backdrop} open={loading}>
-        <CircularProgress size={50} color='inherit' />
+        <CircularProgress size={50} color="inherit" />
       </Backdrop>
       {children}
     </>

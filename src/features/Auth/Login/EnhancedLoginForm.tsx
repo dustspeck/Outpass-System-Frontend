@@ -31,7 +31,7 @@ const EnhancedLoginForm = withFormik<
   EnhancedLoginFormProps,
   EnhancedLoginFormValues
 >({
-  mapPropsToValues: (props) => ({
+  mapPropsToValues: props => ({
     email: props.email ? props.email : "",
     password: props.password ? props.password : "",
   }),

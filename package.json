@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md,yml,yaml,css,scss,sass,less,html,vue,graphql,gql}'"
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",

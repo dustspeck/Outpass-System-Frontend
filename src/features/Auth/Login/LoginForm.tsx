@@ -19,7 +19,7 @@ interface IStudentRegisterFormProps {}
 
 export const LoginForm: React.FC<
   IStudentRegisterFormProps & FormikProps<EnhancedLoginFormValues>
-> = (props) => {
+> = props => {
   const { values, errors, touched, handleSubmit, handleBlur, handleChange } =
     props;
 
@@ -30,26 +30,26 @@ export const LoginForm: React.FC<
   return (
     <div>
       <Stack spacing={1} sx={styles.heading}>
-        <Typography variant='h5' sx={styles.titleText}>
+        <Typography variant="h5" sx={styles.titleText}>
           Login
         </Typography>
-        <Typography variant='subtitle2' color='text.secondary'>
+        <Typography variant="subtitle2" color="text.secondary">
           Please enter your email and password
         </Typography>
       </Stack>
 
       <form onSubmit={handleLoginSubmit}>
         <FormControl required sx={styles.formControl}>
-          <Typography variant='subtitle1' sx={styles.label}>
+          <Typography variant="subtitle1" sx={styles.label}>
             Email
           </Typography>
           <TextField
-            id='emailAddress'
-            placeholder='john@doe.com'
-            type='email'
-            name='email'
-            variant='outlined'
-            size='small'
+            id="emailAddress"
+            placeholder="john@doe.com"
+            type="email"
+            name="email"
+            variant="outlined"
+            size="small"
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -62,18 +62,18 @@ export const LoginForm: React.FC<
         <FormControl required sx={styles.formControl}>
           <Grid
             container
-            direction='row'
-            justifyContent='space-between'
-            alignItems='center'
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
           >
             <Grid item>
-              <Typography variant='subtitle1' sx={styles.label}>
+              <Typography variant="subtitle1" sx={styles.label}>
                 Password
               </Typography>
             </Grid>
             <Grid item>
               <Typography
-                variant='subtitle2'
+                variant="subtitle2"
                 // sx={styles.label}
                 sx={styles.link}
               >
@@ -82,12 +82,12 @@ export const LoginForm: React.FC<
             </Grid>
           </Grid>
           <TextField
-            id='password'
-            placeholder='*********'
-            type='password'
-            name='password'
-            variant='outlined'
-            size='small'
+            id="password"
+            placeholder="*********"
+            type="password"
+            name="password"
+            variant="outlined"
+            size="small"
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -99,16 +99,16 @@ export const LoginForm: React.FC<
         <FormControl sx={styles.formControl}>
           <Grid
             container
-            direction='row'
-            justifyContent='space-between'
-            alignItems='center'
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
           >
             <Grid item>
               <Button
                 sx={styles.secondaryButton}
-                variant='contained'
-                color='primary'
-                type='submit'
+                variant="contained"
+                color="primary"
+                type="submit"
                 // disabled={authLoading}
                 // fullWidth
               >

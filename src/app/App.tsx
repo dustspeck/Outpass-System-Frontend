@@ -8,6 +8,7 @@ import store from "./store";
 
 import * as ROUTES from "../constants/routes";
 // pages
+import Home from "../features/Home/Home";
 import Login from "../features/Auth/Login/Login";
 
 // Components
@@ -24,7 +25,7 @@ const App = () => {
           <Loading>
             <Routes>
               {/* Landing Pages */}
-              {/* <Route path={ROUTES.HOME} element={<Home />} /> */}
+              <Route path={ROUTES.HOME} element={<Home />} />
 
               {/* Auth Routes */}
               {/* <Route path={ROUTES.REGISTER} element={<Register />} /> */}
