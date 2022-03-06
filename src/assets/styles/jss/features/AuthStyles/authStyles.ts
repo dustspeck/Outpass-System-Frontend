@@ -16,6 +16,7 @@ const styles = {
     height: "100vh",
     backgroundColor: "#ccc",
     overflow: "hidden",
+    display: ["none", "none", "none", "block"],
 
     "& img": {
       width: "auto",
