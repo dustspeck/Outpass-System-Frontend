@@ -1,15 +1,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/manavendrasen/Outpass-System-Frontend">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/mujhub/website/main/src/images/logo256.png?token=GHSAT0AAAAAABRUKFYSWRWOPJBGJQDE22X6YREVYDQ" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Outpass-System-Frontend</h3>
+  <h3 align="center">MUJHUB Outpass System</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/manavendrasen/Outpass-System-Frontend"><strong>Explore the docs »</strong></a>
+   Online Outpass System
     <br />
     <br />
     <a href="https://github.com/manavendrasen/Outpass-System-Frontend">View Demo</a>
