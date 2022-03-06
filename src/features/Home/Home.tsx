@@ -6,6 +6,7 @@ function Home() {
     <div>
       Home
       <Link to="/auth/login">Login</Link>
+      <Link to="/student/dashboard">Student Dashboard</Link>
     </div>
   );
 }
