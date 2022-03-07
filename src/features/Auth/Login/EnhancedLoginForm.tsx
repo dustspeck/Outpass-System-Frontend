@@ -10,11 +10,11 @@ import {
   EMAIL_INVALID,
 } from "../../../constants/formMessages";
 
-// import { login } from "../../../slices/authSlice";
+import { login } from "../../../slices/authSlice";
 import { LoginForm } from "./LoginForm";
 
 interface IDispatchProps {
-  // login: (email: string, password: string, history: History) => AppThunk;
+  login: (email: string, password: string, history: History) => AppThunk;
 }
 
 export interface EnhancedLoginFormValues {
@@ -25,7 +25,7 @@ export interface EnhancedLoginFormValues {
 export interface EnhancedLoginFormProps {
   email?: string;
   password?: string;
-  // login: (email: string, password: string, history: History) => void;
+  login: (email: string, password: string, history: History) => void;
 }
 const EnhancedLoginForm = withFormik<
   EnhancedLoginFormProps,
@@ -46,9 +46,13 @@ const EnhancedLoginForm = withFormik<
       .min(6, PASSWORD_TOO_SHORT),
   }),
   handleSubmit: (values, { setSubmitting, props }) => {
+    const { login } = props;
+    login(values.email, values.password, history);
+    setSubmitting(false);
+    console.log(login);
     console.log(values);
   },
   displayName: "LoginForm",
 })(LoginForm);
 
-export default connect<null, IDispatchProps>(null, {})(EnhancedLoginForm);
+export default connect<null, IDispatchProps>(null)(EnhancedLoginForm);
