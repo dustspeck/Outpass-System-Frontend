@@ -99,11 +99,11 @@ const styles = {
 
     "& > *": {
       "& > *": {
-        "&:nth-child(1)": {
+        "&:nth-of-type(1)": {
           fontSize: "0.85rem",
           color: "text.secondary",
         },
-        "&:nth-child(2)": {
+        "&:nth-of-type(2)": {
           fontWeight: "500",
         },
       },

@@ -1,6 +1,8 @@
 import { withFormik } from "formik";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import * as Yup from "yup";
+import { History } from "history";
 import { AppThunk } from "../../../app/store";
 import {
   EMAIL_REQUIRED,
@@ -22,7 +24,7 @@ export interface EnhancedLoginFormValues {
   password: string;
 }
 
-export interface EnhancedLoginFormProps {
+export interface EnhancedLoginFormProps extends RouteComponentProps {
   email?: string;
   password?: string;
   login: (email: string, password: string, history: History) => void;
@@ -46,13 +48,15 @@ const EnhancedLoginForm = withFormik<
       .min(6, PASSWORD_TOO_SHORT),
   }),
   handleSubmit: (values, { setSubmitting, props }) => {
-    const { login } = props;
+    const { login, history } = props;
     login(values.email, values.password, history);
     setSubmitting(false);
-    console.log(login);
-    console.log(values);
   },
   displayName: "LoginForm",
 })(LoginForm);
 
-export default connect<null, IDispatchProps>(null)(EnhancedLoginForm);
+const EnhancedLoginFormWithRouter = withRouter(EnhancedLoginForm);
+
+export default connect<null, IDispatchProps>(null, { login })(
+  EnhancedLoginFormWithRouter
+);

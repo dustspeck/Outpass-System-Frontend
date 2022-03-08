@@ -51,6 +51,7 @@
     "import/no-cycle": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-param-reassign": "off",
-    "no-useless-catch": "off"
+    "no-useless-catch": "off",
+    "no-restricted-globals": "off"
   }
 }

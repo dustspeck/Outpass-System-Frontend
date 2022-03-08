@@ -17,4 +17,7 @@ export const resetPassword = (resetToken = ":resetToken") =>
   `${AUTH_ROUTE}/${resetToken}/reset-password`;
 
 export const STUDENT_ROUTE = "/student";
-export const STUDENT_DASHBOARD = "/student/dashboard";
+export const STUDENT_DASHBOARD = `${STUDENT_ROUTE}${DASHBOARD_ROUTE}`;
+
+export const WARDEN_ROUTE = "/warden";
+export const WARDEN_DASHBOARD = `${WARDEN_ROUTE}${DASHBOARD_ROUTE}`;

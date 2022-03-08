@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   FormControl,
@@ -9,11 +9,13 @@ import {
   Grid,
   Stack,
 } from "@mui/material";
+import { useSelector, shallowEqual } from "react-redux";
 import { Link } from "react-router-dom";
 import { FormikProps } from "formik";
 import styles from "../../../assets/styles/jss/components/FormStyles/formStyles";
 import { EnhancedLoginFormValues } from "./EnhancedLoginForm";
-import { FORGOT_PASSWORD, REGISTER } from "../../../constants/routes";
+import { FORGOT_PASSWORD } from "../../../constants/routes";
+import { RootState } from "../../../app/rootReduces";
 
 interface IStudentRegisterFormProps {}
 
@@ -23,10 +25,17 @@ export const LoginForm: React.FC<
   const { values, errors, touched, handleSubmit, handleBlur, handleChange } =
     props;
 
+  const { authLoading } = useSelector((state: RootState) => {
+    return {
+      authLoading: state.auth.loading,
+    };
+  }, shallowEqual);
+
   const handleLoginSubmit = (e: any) => {
     e.preventDefault();
     handleSubmit();
   };
+
   return (
     <div>
       <Stack spacing={1} sx={styles.heading}>
@@ -109,10 +118,9 @@ export const LoginForm: React.FC<
                 variant="contained"
                 color="primary"
                 type="submit"
-                // disabled={authLoading}
-                // fullWidth
+                disabled={authLoading}
               >
-                Login
+                {authLoading ? "Loading..." : "Login"}
               </Button>
             </Grid>
           </Grid>

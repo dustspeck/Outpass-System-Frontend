@@ -1,6 +1,10 @@
 const styles = {
   backdrop: {
-    color: "#fff",
+    height: "100vh",
+    width: "100vw",
+    display: "grid",
+    placeItems: "center",
+    backgroundColor: "#fff",
     zIndex: (theme: { zIndex: { drawer: number } }) => theme.zIndex.drawer + 1,
   },
 };
