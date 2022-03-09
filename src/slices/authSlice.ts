@@ -84,11 +84,8 @@ export const login =
         console.log(error);
         dispatch(authFailure(error?.message || "Error in Authentication"));
       } else {
-        const { data, error } = await supabase
-          .from("users")
-          .select("*")
-          .eq("id", user.id);
-
+        const { data, error } = await supabase.rpc("get_account_info");
+        console.log("data", data);
         if (error) {
           console.log(error);
           dispatch(authFailure(error.message || "Could not get user data"));
