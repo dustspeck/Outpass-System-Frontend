@@ -74,6 +74,7 @@ export const AddOutpassForm: React.FC<
               </Typography>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DateTimePicker
+                  inputFormat="dd MMM yyyy hh:mm a"
                   renderInput={props => (
                     <TextField
                       {...props}
@@ -96,6 +97,7 @@ export const AddOutpassForm: React.FC<
               </Typography>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DateTimePicker
+                  inputFormat="dd MMM yyyy hh:mm a"
                   renderInput={props => (
                     <TextField
                       {...props}

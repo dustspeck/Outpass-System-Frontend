@@ -44,15 +44,25 @@ const EnhancedAddOutpassForm = withFormik<
   EnhancedAddOutpassFormValues
 >({
   mapPropsToValues: props => ({
-    from: new Date(),
-    to: new Date(),
+    from: new Date(
+      new Date(new Date().setHours(12, 0, 0, 0)).setDate(
+        new Date().getDate() + 2
+      )
+    ),
+    to: new Date(
+      new Date(new Date().setHours(12, 0, 0, 0)).setDate(
+        new Date().getDate() + 4
+      )
+    ),
     address: "",
     reason: "",
     transport: "",
     isParentConsent: false,
   }),
   validationSchema: Yup.object().shape({
-    from: Yup.date().required(DATE_REQUIRED).min(new Date(), DATE_INVALID),
+    from: Yup.date()
+      .required(DATE_REQUIRED)
+      .min(new Date(), "Date cannot be in the past"),
     to: Yup.date()
       .min(Yup.ref("from"), END_CANNOT_BE_BEFORE_START)
       .required(DATE_REQUIRED),
