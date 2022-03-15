@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../../../config/config";
+import GenerateQR from "./GenerateQR";
 
 function DumpOutpasses() {
   const [outpasses, setOutpasses] = useState([] as any[]);
@@ -35,7 +36,15 @@ function DumpOutpasses() {
       ) : isLoading ? (
         <div>Loading...</div>
       ) : (
-        <pre>{JSON.stringify(outpasses, null, 2)}</pre>
+        outpasses.map(outpass => (
+          <div>
+            <pre>{JSON.stringify(outpass, null, 2)}</pre>
+            <GenerateQR
+              id={outpass.id}
+              disabled={outpass.signed_by ? false : true}
+            />
+          </div>
+        ))
       )}
     </div>
   );
