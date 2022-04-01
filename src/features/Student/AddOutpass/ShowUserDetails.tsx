@@ -18,13 +18,13 @@ import styles from "../../../assets/styles/jss/components/FormStyles/formStyles"
 
 const ShowUserDetails = () => {
   const [user, setUser] = useState({
-    name: "Manavendra Sen",
-    regNo: "199302058",
+    name: "Vaibhav Garg",
+    regNo: "199302147",
     year: "3",
     course: "B.Tech",
     branch: "IT",
     block: "B3",
-    room: "104",
+    room: "312",
   });
 
   return (
