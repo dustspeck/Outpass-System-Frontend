@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "@mui/material";
+import { Box, Button, CircularProgress } from "@mui/material";
 import axios from "axios";
 import { Encoder, ErrorCorrectionLevel } from "@nuintun/qrcode";
 import FullScreenDialog from "../../../components/Dialog/Dialog";
@@ -21,7 +21,7 @@ const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
   const fetchQrData = async (id: string) => {
     try {
       setIsLoading(true);
-      const { data } = await axios.get(`http://127.0.0.1:5000/outpass/${id}`); //TODO: replace with server url
+      const { data } = await axios.get(`http://127.0.0.1:5000/outpass/${id}`); // TODO: replace with server url
       console.log(data);
       if (data.data) {
         setQRData(data.data);
@@ -69,7 +69,13 @@ const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
         handleClose={handleDialogClose}
       >
         <div>
-          {isLoading ? <div>Loading...</div> : <img src={qrDataURL} alt="" />}
+          {isLoading ? (
+            <div>
+              <CircularProgress />
+            </div>
+          ) : (
+            <img src={qrDataURL} alt="" />
+          )}
         </div>
       </FullScreenDialog>
     </div>

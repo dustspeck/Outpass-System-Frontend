@@ -7,6 +7,9 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  Chip,
+  CircularProgress,
+  Box,
 } from "@mui/material";
 import { format } from "date-fns";
 import { supabase } from "../../../config/config";
@@ -53,9 +56,29 @@ export const OutpassesTable: React.FC<OutpassesTableProps> = () => {
   return (
     <div>
       {isError ? (
-        <div>Error fetching outpasses</div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            paddingY: 3,
+          }}
+        >
+          Error Fetching Outpasses
+        </Box>
       ) : isLoading ? (
-        <div>Loading...</div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            paddingY: 3,
+          }}
+        >
+          <CircularProgress />
+        </Box>
       ) : (
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -63,9 +86,11 @@ export const OutpassesTable: React.FC<OutpassesTableProps> = () => {
               <TableRow>
                 <TableCell>ID</TableCell>
                 <TableCell align="right">Created At</TableCell>
+
+                <TableCell align="right">From</TableCell>
+                <TableCell align="right">To</TableCell>
                 <TableCell align="right">Is Approved</TableCell>
-                <TableCell align="right">Duration</TableCell>
-                <TableCell align="right">Generate</TableCell>
+                <TableCell align="right">QR</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -78,14 +103,29 @@ export const OutpassesTable: React.FC<OutpassesTableProps> = () => {
                     {outpass.id}
                   </TableCell>
                   <TableCell align="right">
-                    {format(new Date(outpass.created_at), "dd/MM/yyyy")}
+                    {format(new Date(outpass.created_at), "dd MMM yyyy")}
+                  </TableCell>
+
+                  <TableCell align="right">
+                    {format(new Date(outpass.from), "hh:mm b dd MMM yyyy")}
                   </TableCell>
                   <TableCell align="right">
-                    {outpass.signed_by ? "Yes" : "No"}
+                    {format(new Date(outpass.to), "hh:mm b dd MMM yyyy")}
                   </TableCell>
                   <TableCell align="right">
-                    {format(new Date(outpass.from), "dd/MM/yyyy")} -
-                    {format(new Date(outpass.to), "dd/MM/yyyy")}
+                    {outpass.signed_by ? (
+                      <Chip
+                        color="success"
+                        variant="outlined"
+                        label="Approved"
+                      />
+                    ) : (
+                      <Chip
+                        color="error"
+                        variant="outlined"
+                        label="Not Approved"
+                      />
+                    )}
                   </TableCell>
                   <TableCell align="right">
                     <GenerateQR id={outpass.id} disabled={!outpass.signed_by} />
