@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Box, Breadcrumbs, Stack, Typography } from "@mui/material";
+import { Box, Breadcrumbs, Container, Stack, Typography } from "@mui/material";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import styles from "../../assets/styles/jss/components/DashboardLayoutStyles/PageHeadingStyles";
 
@@ -17,32 +17,34 @@ export const PageHeading: React.FC<IPageHeadingProps> = ({
 }) => {
   return (
     <Box sx={styles.root}>
-      <Stack flexGrow={1} spacing={1}>
-        <Typography variant="h4" sx={styles.heading}>
-          {heading}
-        </Typography>
-        {subHeading !== "" && (
-          <Typography color="text.secondary" variant="subtitle1">
-            {subHeading}
+      <Container maxWidth="xl" sx={styles.container}>
+        <Stack flexGrow={1} spacing={1}>
+          <Typography variant="h4" sx={styles.heading}>
+            {heading}
           </Typography>
-        )}
-        {breadcrumbs && (
-          <Breadcrumbs
-            separator={<MdOutlineNavigateNext fontSize={16} />}
-            aria-label="breadcrumb"
-          >
-            {breadcrumbs.map(crumb => (
-              <Typography variant="body2" key={crumb} color="text.secondary">
-                {crumb}
-              </Typography>
-            ))}
-          </Breadcrumbs>
-        )}
-      </Stack>
+          {subHeading !== "" && (
+            <Typography color="text.secondary" variant="subtitle1">
+              {subHeading}
+            </Typography>
+          )}
+          {breadcrumbs && (
+            <Breadcrumbs
+              separator={<MdOutlineNavigateNext fontSize={16} />}
+              aria-label="breadcrumb"
+            >
+              {breadcrumbs.map(crumb => (
+                <Typography variant="body2" key={crumb} color="text.secondary">
+                  {crumb}
+                </Typography>
+              ))}
+            </Breadcrumbs>
+          )}
+        </Stack>
 
-      <Stack direction="row" spacing={1}>
-        {children}
-      </Stack>
+        <Stack direction="row" spacing={1}>
+          {children}
+        </Stack>
+      </Container>
     </Box>
   );
 };

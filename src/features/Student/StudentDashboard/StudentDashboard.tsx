@@ -1,5 +1,5 @@
-import { Button } from "@mui/material";
 import React from "react";
+import { Button, Container } from "@mui/material";
 import { PageHeading } from "../../../components/PageHeading/PageHeading";
 import AddOutpass from "../AddOutpass/AddOutpass";
 import DumpOutpasses from "../Outpasses/DumpOutpasses";
@@ -12,7 +12,10 @@ const StudentDashboard = () => {
           Add Outpass
         </Button>
       </PageHeading>
-      <DumpOutpasses />
+
+      <Container maxWidth="xl">
+        <DumpOutpasses />
+      </Container>
     </div>
   );
 };
