@@ -51,9 +51,9 @@ const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
       >
         Generate QR
       </Button>
-      {isLoading ? <div>Loading...</div> : <div>{qrData}</div>}
-      {qrDataURL}
-      <img src={qrDataURL} />
+      {isLoading && <div>Loading...</div>}
+      {/* {qrDataURL} */}
+      <img src={qrDataURL} alt="" />
     </div>
   );
 };

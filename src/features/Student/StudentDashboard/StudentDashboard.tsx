@@ -3,6 +3,7 @@ import { Button, Container } from "@mui/material";
 import { PageHeading } from "../../../components/PageHeading/PageHeading";
 import AddOutpass from "../AddOutpass/AddOutpass";
 import DumpOutpasses from "../Outpasses/DumpOutpasses";
+import { OutpassesTable } from "../Outpasses/OutpassesTable";
 
 const StudentDashboard = () => {
   return (
@@ -13,8 +14,14 @@ const StudentDashboard = () => {
         </Button>
       </PageHeading>
 
-      <Container maxWidth="xl">
-        <DumpOutpasses />
+      <Container
+        maxWidth="xl"
+        sx={{
+          paddingY: 3,
+        }}
+      >
+        {/* <DumpOutpasses /> */}
+        <OutpassesTable />
       </Container>
     </div>
   );

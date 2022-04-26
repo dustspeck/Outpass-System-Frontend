@@ -39,10 +39,7 @@ function DumpOutpasses() {
         outpasses.map(outpass => (
           <div>
             <pre>{JSON.stringify(outpass, null, 2)}</pre>
-            <GenerateQR
-              id={outpass.id}
-              disabled={outpass.signed_by ? false : true}
-            />
+            <GenerateQR id={outpass.id} disabled={!outpass.signed_by} />
           </div>
         ))
       )}
