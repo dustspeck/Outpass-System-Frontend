@@ -39,14 +39,14 @@ const theme = createTheme({
     },
   },
   components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "transparent",
-          boxShadow: "none",
-        },
-      },
-    },
+    // MuiAppBar: {
+    //   styleOverrides: {
+    //     root: {
+    //       backgroundColor: "transparent",
+    //       boxShadow: "none",
+    //     },
+    //   },
+    // },
     MuiCard: {
       styleOverrides: {
         root: {

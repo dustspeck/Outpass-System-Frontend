@@ -2,11 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
 import { Encoder, ErrorCorrectionLevel } from "@nuintun/qrcode";
+import FullScreenDialog from "../../../components/Dialog/Dialog";
 
 const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [qrData, setQRData] = useState(null);
   const [qrDataURL, setQRDataURL] = useState("");
+  const [open, setOpen] = React.useState(false);
+
+  const handleDialogOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDialogClose = () => {
+    setOpen(false);
+  };
 
   const fetchQrData = async (id: string) => {
     try {
@@ -20,6 +30,7 @@ const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      handleDialogOpen();
     }
   };
 
@@ -41,7 +52,7 @@ const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
   return (
     <div>
       <Button
-        disabled={disabled}
+        disabled={disabled || isLoading}
         variant="outlined"
         color="primary"
         type="submit"
@@ -49,11 +60,18 @@ const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
           fetchQrData(id);
         }}
       >
-        Generate QR
+        {!isLoading ? "Show QR" : "Loading..."}
       </Button>
-      {isLoading && <div>Loading...</div>}
-      {/* {qrDataURL} */}
-      <img src={qrDataURL} alt="" />
+
+      <FullScreenDialog
+        heading="Outpass QR"
+        open={open}
+        handleClose={handleDialogClose}
+      >
+        <div>
+          {isLoading ? <div>Loading...</div> : <img src={qrDataURL} alt="" />}
+        </div>
+      </FullScreenDialog>
     </div>
   );
 };
