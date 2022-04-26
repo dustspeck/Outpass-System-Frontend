@@ -49,6 +49,10 @@ function App() {
               <StudentRoute exact path={ROUTES.STUDENT_DASHBOARD}>
                 <StudentDashboard />
               </StudentRoute>
+
+              <StudentRoute exact path={ROUTES.ADD_OUTPASS}>
+                <StudentDashboard />
+              </StudentRoute>
             </Switch>
           </Loading>
         </Router>

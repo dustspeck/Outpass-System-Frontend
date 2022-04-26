@@ -21,3 +21,5 @@ export const STUDENT_DASHBOARD = `${STUDENT_ROUTE}${DASHBOARD_ROUTE}`;
 
 export const WARDEN_ROUTE = "/warden";
 export const WARDEN_DASHBOARD = `${WARDEN_ROUTE}${DASHBOARD_ROUTE}`;
+
+export const ADD_OUTPASS = `${BASE_ROUTE}/outpass`;
