@@ -40,15 +40,19 @@ const FullScreenDialog: React.FC<FullScreenDialogProps> = ({
 }) => {
   return (
     <Dialog
-      sx={{
-        backgroundColor: "#f5f5f5",
-      }}
       fullScreen
       open={open}
       onClose={handleClose}
       TransitionComponent={Transition}
     >
-      <AppBar sx={{ position: "relative" }}>
+      <AppBar
+        sx={{
+          position: "relative",
+          backgroundColor: "#f1f5f9",
+          boxShadow: "none",
+          color: "text.primary",
+        }}
+      >
         <Toolbar>
           <IconButton
             edge="start"

@@ -1,9 +1,10 @@
 const styles = {
   root: {
-    backgroundColor: "#fafafa",
+    backgroundColor: "#f8fafc",
     borderBottom: "1px solid #e4e4e7",
     // paddingX: 4,
-    paddingY: 8,
+    paddingTop: 4,
+    paddingBottom: 6,
   },
   container: {
     display: "flex",
