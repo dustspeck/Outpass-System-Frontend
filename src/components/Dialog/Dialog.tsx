@@ -40,6 +40,9 @@ const FullScreenDialog: React.FC<FullScreenDialogProps> = ({
 }) => {
   return (
     <Dialog
+      sx={{
+        backgroundColor: "#f5f5f5",
+      }}
       fullScreen
       open={open}
       onClose={handleClose}

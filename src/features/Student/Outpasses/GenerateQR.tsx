@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, CircularProgress } from "@mui/material";
+import { Box, Button, Card, CircularProgress, Typography } from "@mui/material";
 import axios from "axios";
 import { Encoder, ErrorCorrectionLevel } from "@nuintun/qrcode";
 import FullScreenDialog from "../../../components/Dialog/Dialog";
@@ -74,7 +74,26 @@ const GenerateQR = ({ id, disabled }: { id: string; disabled: boolean }) => {
               <CircularProgress />
             </div>
           ) : (
-            <img src={qrDataURL} alt="" />
+            <Card
+              sx={{
+                padding: "1.5rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.5rem",
+                textAlign: "center",
+                paddingTop: "1.5rem",
+              }}
+            >
+              <Typography variant="h6">Scan To Verify</Typography>
+              <Typography variant="body2" color="text.secondary">
+                Show the QR Code at the
+                <br />
+                Hostel Entry Gate when you return.
+              </Typography>
+              <img src={qrDataURL} alt="" />
+            </Card>
           )}
         </div>
       </FullScreenDialog>
