@@ -80,7 +80,7 @@ const styles = {
     gap: "1.5rem",
   },
   background: {
-    minHeight: "100vh",
+    // minHeight: "100vh",
     display: "grid",
     placeItems: "center",
   },

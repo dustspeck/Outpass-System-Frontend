@@ -10,21 +10,17 @@ import {
 import EnhancedAddOutpassForm from "./EnhancedAddOutpassForm";
 import ShowUserDetails from "./ShowUserDetails";
 import styles from "../../../assets/styles/jss/components/FormStyles/formStyles";
+import { PageHeading } from "../../../components/PageHeading/PageHeading";
 
 interface IAddOutpassProps {}
 
 const AddOutpass: React.FC<IAddOutpassProps> = () => (
-  <Box sx={styles.background}>
-    <Container maxWidth="xl">
-      <Stack spacing={1} sx={styles.heading}>
-        <Typography variant="h5" sx={styles.titleText}>
-          📝 Outpass Application
-        </Typography>
-        <Typography variant="subtitle2" color="text.secondary">
-          Application for new outpass
-        </Typography>
-      </Stack>
-      <Divider />
+  <div>
+    <PageHeading
+      heading="📝 Outpass Application"
+      subHeading="Application for new outpass"
+    />
+    <Container maxWidth="xl" sx={styles.background}>
       <Grid
         container
         direction="row"
@@ -41,7 +37,7 @@ const AddOutpass: React.FC<IAddOutpassProps> = () => (
         </Grid>
       </Grid>
     </Container>
-  </Box>
+  </div>
 );
 
 export default AddOutpass;

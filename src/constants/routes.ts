@@ -18,6 +18,7 @@ export const resetPassword = (resetToken = ":resetToken") =>
 
 export const STUDENT_ROUTE = "/student";
 export const STUDENT_DASHBOARD = `${STUDENT_ROUTE}${DASHBOARD_ROUTE}`;
+export const GET_NEW_OUTPASS = `${STUDENT_ROUTE}/new`;
 
 export const WARDEN_ROUTE = "/warden";
 export const WARDEN_DASHBOARD = `${WARDEN_ROUTE}${DASHBOARD_ROUTE}`;

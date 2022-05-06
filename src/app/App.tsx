@@ -23,6 +23,7 @@ import WardenDashboard from "../features/Warden/WardenDashboard/WardenDashboard"
 
 // Components
 import Loading from "../components/Loading/Loading";
+import AddOutpass from "../features/Student/AddOutpass/AddOutpass";
 // import DashboardMenu from "../components/Dashboard/DashboardMenu";
 // import PageNotFound from "../components/PageNotFound";
 
@@ -48,6 +49,10 @@ function App() {
               {/* Student Routes */}
               <StudentRoute exact path={ROUTES.STUDENT_DASHBOARD}>
                 <StudentDashboard />
+              </StudentRoute>
+
+              <StudentRoute exact path={ROUTES.GET_NEW_OUTPASS}>
+                <AddOutpass />
               </StudentRoute>
 
               <StudentRoute exact path={ROUTES.ADD_OUTPASS}>

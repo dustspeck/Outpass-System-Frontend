@@ -51,7 +51,7 @@ export const PageHeading: React.FC<IPageHeadingProps> = ({
                       type="button"
                       className="text-red-500 font-semibold uppercase text-sm p-4 rounded"
                     >
-                      Logout
+                      <Link to="/">Logout</Link>
                     </button>
                   </li>
                 </ul>
